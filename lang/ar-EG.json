@@ -1,0 +1,20 @@
+{
+	"headline_first": "ضمان حياتك",
+	"headline_second": "هو ضمان لعائلتك",
+	"step_one_form_button": "المعلومات الشخصية",
+	"step_two_form_button": "معلومات مهنية",
+	"step_three_form_button": "معلومات صحية",
+	"step_four_form_button": "معلومات الاتصال والتسجيل",
+	"name": "الاسم الثلاثي",
+	"id_label": "رقم البطاقة الموحدة/هوية الاحوال المدنية",
+	"id_checkbox": "هوية الاحوال",
+	"status_checkbox": "هوية الاحوال المدنية",
+	"id_input": "الجنسية",
+	"birth_input": "تاريخ الميلاد",
+	"gender_input": "الجنس",
+	"gender_input_male": "ذكر",
+	"gender_input_female": "انثى",
+	"status_input": "الحالة الاجتماعية",
+	"status_input_single": "اعزب",
+	"status_input_engaged": "مرتبط"
+}

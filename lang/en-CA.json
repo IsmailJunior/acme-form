@@ -1,0 +1,20 @@
+{
+	"headline_first": "Your life insurnce",
+	"headline_second": "Is your family insurnce",
+	"step_one_form_button": "Personal Info",
+	"step_two_form_button": "Carrer Info",
+	"step_three_form_button": "Health Info",
+	"step_four_form_button": "Contact Info",
+	"name": "Full Name",
+	"id_label": "ID Number/Status ID Number",
+	"id_checkbox": "ID Number",
+	"status_checkbox": "Status ID Number",
+	"id_input": "Nationalty",
+	"birth_input": "Birth Date",
+	"gender_input": "Gender",
+	"gender_input_male": "Male",
+	"gender_input_female": "Female",
+	"status_input": "Social Status",
+	"status_input_single": "Single",
+	"status_input_engaged": "Engaged"
+}
