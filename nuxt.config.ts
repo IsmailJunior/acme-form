@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   routeRules: {'/': {redirect: '/en-CA'}},
   devtools: { enabled: false },
+  ssr: false,
   modules: ['@nuxtjs/i18n', '@nuxtjs/tailwindcss', '@pinia/nuxt'],
   i18n: {
     vueI18n: './config/i18n.config.ts',
