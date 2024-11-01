@@ -43,14 +43,14 @@ const handleForm = () =>
 	{
 		errors.value = null;
 		stepStore.storeFirstStepForm( form.value )
-		stageStore.secondStage = true;
+		stageStore.stages.at(1).active = true;
 	}
 }
 </script>
 
 <template>
-	<div class="space-y-8" v-show="!stageStore.stages.at(1).active">
-		<h1>First Stage</h1>
+	<div class="space-y-8" v-show="stageStore.stages.at(3).active">
+		<h1>Fourth Stage</h1>
 		<Input
 		id="name"
 		:label="$t('name')"
