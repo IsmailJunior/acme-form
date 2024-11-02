@@ -50,56 +50,34 @@ const handleForm = () =>
 
 <template>
 	<div class="space-y-8" v-show="stageStore.stages.at(3).active">
-		<h1>Fourth Stage</h1>
-		<Input
-		id="name"
-		:label="$t('name')"
-		v-model="form.name"
-		:error="errors?.name"
-	/>
-	<div class="space-y-4">
-		<h1>{{ $t("id_label") }}</h1>
-		<div class="flex gap-4">
-			<Checkbox
-				id="id"
-				:label="$t('id_checkbox')"
-				v-model="form.id"
-			/>
-			<Checkbox
-				id="status"
-				:label="$t('status_checkbox')"
-				v-model="form.status"
-			/>
-		</div>
-	</div>
-	<Input
-		id="id"
-		:label="$t('id_input')"
-		v-model="form.nationalty"
-		:error="errors?.nationalty"
-	/>
-	<DateInput
-		id="birth"
-		:label="$t('birth_input')"
-		v-model="form.birth"
-		:error="errors?.birth"
-	/>
-	<Selector
-		:label="$t('gender_input')"
+		<Selector
+		:label="$t('city')"
 		v-model="form.gender"
 		:error="errors?.gender"
 	>
-		<option>{{ $t("gender_input_male") }}</option>
-		<option>{{ $t("gender_input_female") }}</option>
+		<option>{{ $t("baghdad") }}</option>
+		<option>{{ $t("bassra") }}</option>
+		<option>{{ $t("erbil") }}</option>
+		<option>{{ $t("mousl") }}</option>
 	</Selector>
-	<Selector
-		:label="$t('status_input')"
-		v-model="form.socialStatus"
-		:error="errors?.socialStatus"
-	>
-		<option>{{ $t("status_input_single") }}</option>
-		<option>{{ $t("status_input_engaged") }}</option>
-	</Selector>
+		<Input
+		id="name"
+		:label="$t('place_you_live')"
+		v-model="form.name"
+		:error="errors?.name"
+	/>
+	<Input
+		id="id"
+		:label="$t('phone_no')"
+		v-model="form.nationalty"
+		:error="errors?.nationalty"
+	/>
+	<Input
+		id="id"
+		:label="$t('email')"
+		v-model="form.nationalty"
+		:error="errors?.nationalty"
+	/>
 	<div class="flex flex-row-reverse">
 		<Button @click="handleForm" :class-name="{'rotate-180': locale === 'ar-EG'}">
 		<PlayIcon />

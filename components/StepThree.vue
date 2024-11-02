@@ -14,23 +14,13 @@ const stageStore = useFormStagesStore();
 const errors = ref( null )
 
 const formSchema = z.object({
-	name: z.string().min( 3, {message: t('error_name')}),
-	nationalty: z.string().min(3, {message: t('error_id_input')}),
-	id: z.string(),
-	status: z.string(),
-	birth: z.string().min(2, {message: t('error_birth_input')}),
-	gender: z.string().min(3, {message: t('error_gender_input')}),
-	socialStatus: z.string().min(3, {message: t('error_status_input')})
+	chronicDiseases: z.string().min( 3, {message: t('error_name')}),
+	nameOfDisease: z.string().min(3, {message: t('error_id_input')}),
 } )
 
 const form = ref( {
-	name: '',
-	nationalty: '',
-	id: 'on',
-	status: 'on',
-	birth: '',
-	gender: '',
-	socialStatus: ''
+	chronicDiseases: '',
+	nameOfDisease: '',
 })
 
 const handleForm = () =>
@@ -50,56 +40,27 @@ const handleForm = () =>
 
 <template>
 	<div class="space-y-8" v-show="stageStore.stages.at(2).active && !stageStore.stages.at(3).active">
-		<h1>Third Stage</h1>
-		<Input
-		id="name"
-		:label="$t('name')"
-		v-model="form.name"
-		:error="errors?.name"
-	/>
 	<div class="space-y-4">
-		<h1>{{ $t("id_label") }}</h1>
+		<h1>{{ $t("chronic_diseases") }}</h1>
 		<div class="flex gap-4">
 			<Checkbox
 				id="id"
-				:label="$t('id_checkbox')"
-				v-model="form.id"
+				:label="$t('yes')"
+				v-model="form.chronicDiseases"
 			/>
 			<Checkbox
 				id="status"
-				:label="$t('status_checkbox')"
-				v-model="form.status"
+				:label="$t('no')"
+				v-model="form.chronicDiseases"
 			/>
 		</div>
 	</div>
 	<Input
 		id="id"
-		:label="$t('id_input')"
-		v-model="form.nationalty"
-		:error="errors?.nationalty"
+		:label="$t('name_of_disease')"
+		v-model="form.nameOfDisease"
+		:error="errors?.nameOfDisease"
 	/>
-	<DateInput
-		id="birth"
-		:label="$t('birth_input')"
-		v-model="form.birth"
-		:error="errors?.birth"
-	/>
-	<Selector
-		:label="$t('gender_input')"
-		v-model="form.gender"
-		:error="errors?.gender"
-	>
-		<option>{{ $t("gender_input_male") }}</option>
-		<option>{{ $t("gender_input_female") }}</option>
-	</Selector>
-	<Selector
-		:label="$t('status_input')"
-		v-model="form.socialStatus"
-		:error="errors?.socialStatus"
-	>
-		<option>{{ $t("status_input_single") }}</option>
-		<option>{{ $t("status_input_engaged") }}</option>
-	</Selector>
 	<div class="flex flex-row-reverse">
 		<Button @click="handleForm" :class-name="{'rotate-180': locale === 'ar-EG'}">
 		<PlayIcon />

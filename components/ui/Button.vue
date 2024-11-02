@@ -7,8 +7,8 @@ const props = defineProps(["className", "isActive"]);
 <template>
 	<button
 		type="button"
-		:class=" [ cn( 'h-16 flex justify-between items-center cursor-pointer shadow-xl rounded-full text-start px-5 text-xl bg-[#0D79A8] text-white',
-			{ 'bg-white': isActive, 'text-slate-600': isActive },
+		:class=" [ cn( 'h-16 flex justify-between transition-all items-center cursor-pointer shadow-xl rounded-full text-start px-5 text-xl bg-[#0D79A8] text-white',
+			{ 'bg-white': isActive, 'text-slate-600': isActive},
 			className ) ] "
 	>
 		<slot />

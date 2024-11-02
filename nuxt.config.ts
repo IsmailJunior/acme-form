@@ -4,7 +4,12 @@ export default defineNuxtConfig({
   routeRules: {'/': {redirect: '/en-CA'}},
   devtools: { enabled: false },
   ssr: false,
-  modules: ['@nuxtjs/i18n', '@nuxtjs/tailwindcss', '@pinia/nuxt'],
+  modules: [
+    '@nuxtjs/i18n',
+    '@nuxtjs/tailwindcss',
+    '@pinia/nuxt',
+    '@nuxtjs/color-mode'
+  ],
   i18n: {
     vueI18n: './config/i18n.config.ts',
     locales: [
