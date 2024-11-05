@@ -13,10 +13,10 @@ const stageStore = useFormStagesStore();
 const errors = ref( null )
 
 const formSchema = z.object({
-	workStatus: z.string().min( 2, {message: t('error_name')}),
-	workSector: z.string().min(2, {message: t('error_id_input')}),
-	jobTitle: z.string().min(4, {message: t('error_id_input')}),
-	servicePeriod: z.string(),
+	workStatus: z.string().min( 2, {message: t('error_work_status')}),
+	workSector: z.string().min(2, {message: t('error_type_employment')}),
+	jobTitle: z.string().min(4, {message: t('error_job_title')}),
+	servicePeriod: z.string().min(1, {message: t('length_of_functional_service')}),
 } )
 
 const form = ref( {

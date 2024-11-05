@@ -2,7 +2,13 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   routeRules: {'/': {redirect: '/en-CA'}},
-  devtools: { enabled: false },
+  devtools: {
+    enabled: true,
+
+    timeline: {
+      enabled: true
+    }
+  },
   ssr: false,
   modules: [
     '@nuxtjs/i18n',

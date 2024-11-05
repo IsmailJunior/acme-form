@@ -14,23 +14,17 @@ const stageStore = useFormStagesStore();
 const errors = ref( null )
 
 const formSchema = z.object({
-	name: z.string().min( 3, {message: t('error_name')}),
-	nationalty: z.string().min(3, {message: t('error_id_input')}),
-	id: z.string(),
-	status: z.string(),
-	birth: z.string().min(2, {message: t('error_birth_input')}),
-	gender: z.string().min(3, {message: t('error_gender_input')}),
-	socialStatus: z.string().min(3, {message: t('error_status_input')})
+	city: z.string().min( 3, {message: t('error_city')}),
+	live: z.string().min(3, {message: t('erorr_place_you_live')}),
+	phoneNo: z.string().min(5, {message: t('error_phone_no')}),
+	email: z.string().min(3, {message: t('error_email')}),
 } )
 
 const form = ref( {
-	name: '',
-	nationalty: '',
-	id: 'on',
-	status: 'on',
-	birth: '',
-	gender: '',
-	socialStatus: ''
+	city: '',
+	live: '',
+	phoneNo: '',
+	email: '',
 })
 
 const handleForm = () =>
@@ -52,8 +46,8 @@ const handleForm = () =>
 	<div class="space-y-8" v-show="stageStore.stages.at(3).active">
 		<Selector
 		:label="$t('city')"
-		v-model="form.gender"
-		:error="errors?.gender"
+		v-model="form.city"
+		:error="errors?.city"
 	>
 		<option>{{ $t("baghdad") }}</option>
 		<option>{{ $t("bassra") }}</option>
@@ -63,20 +57,20 @@ const handleForm = () =>
 		<Input
 		id="name"
 		:label="$t('place_you_live')"
-		v-model="form.name"
-		:error="errors?.name"
+		v-model="form.live"
+		:error="errors?.live"
 	/>
 	<Input
 		id="id"
 		:label="$t('phone_no')"
-		v-model="form.nationalty"
-		:error="errors?.nationalty"
+		v-model="form.phoneNo"
+		:error="errors?.phoneNo"
 	/>
 	<Input
 		id="id"
 		:label="$t('email')"
-		v-model="form.nationalty"
-		:error="errors?.nationalty"
+		v-model="form.email"
+		:error="errors?.email"
 	/>
 	<div class="flex flex-row-reverse">
 		<Button @click="handleForm" :class-name="{'rotate-180': locale === 'ar-EG'}">

@@ -5,13 +5,14 @@ import Selector from '@/components/ui/Selector.vue';
 import Checkbox from '@/components/ui/Checkbox.vue';
 import Button from '@/components/ui/Button.vue';
 import { useFirstStepFormStore, useFormStagesStore } from '@/stores/form';
+import { formSchemaStepOne } from '@/schemas/form';
 import {PlayIcon} from 'lucide-vue-next'
 import { z } from 'zod';
 
 const { t, locale } = useI18n();
 const stepStore = useFirstStepFormStore();
 const stageStore = useFormStagesStore();
-const errors = ref( null )
+const errors = ref( null );
 
 const formSchema = z.object({
 	name: z.string().min( 3, {message: t('error_name')}),
@@ -35,7 +36,7 @@ const form = ref( {
 
 const handleForm = () =>
 {
-	const valid = formSchema.safeParse( form.value )
+	const valid = formSchemaStepOne.safeParse( form.value )
 	if ( !valid.success )
 	{
 		errors.value = valid.error.format()
@@ -80,7 +81,6 @@ const handleForm = () =>
 	<DateInput
 		id="birth"
 		:label="$t('birth_input')"
-		v-model="form.birth"
 		:error="errors?.birth"
 	/>
 	<Selector

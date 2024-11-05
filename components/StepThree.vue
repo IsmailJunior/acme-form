@@ -1,7 +1,5 @@
 <script setup>
 import Input from '@/components/ui/Input.vue';
-import DateInput from '@/components/ui/DateInput.vue';
-import Selector from '@/components/ui/Selector.vue';
 import Checkbox from '@/components/ui/Checkbox.vue';
 import Button from '@/components/ui/Button.vue';
 import { useFirstStepFormStore, useFormStagesStore } from '@/stores/form';
@@ -14,8 +12,8 @@ const stageStore = useFormStagesStore();
 const errors = ref( null )
 
 const formSchema = z.object({
-	chronicDiseases: z.string().min( 3, {message: t('error_name')}),
-	nameOfDisease: z.string().min(3, {message: t('error_id_input')}),
+	chronicDiseases: z.string().min( 3, {message: t('error_chronic_diseases')}),
+	nameOfDisease: z.string().min(3, {message: t('error_name_of_disease')}),
 } )
 
 const form = ref( {
